@@ -1,0 +1,15 @@
+.cv-container {
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-width: 100vw;
+    clip-path: polygon(0 40%, 100% 0, 100% 100%, 0% 100%);
+    overflow-x: hidden;
+  }
+
+  button {
+    fill: #c026d3;
+    &:hover {
+      fill: white;
+    }
+  }

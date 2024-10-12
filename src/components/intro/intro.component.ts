@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-intro',
   standalone: true,
-  imports: [],
   templateUrl: './intro.component.html',
-  styleUrl: './intro.component.scss'
+  styleUrls: ['./intro.component.scss'],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class IntroComponent {
 

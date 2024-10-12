@@ -1,1 +1,51 @@
-<p>contact works!</p>
+<div class="text-center py-10 px-5">
+  <h2 class="font-century text-white text-4xl mb-8">Get in touch</h2>
+
+  <div class="max-w-lg mx-auto mt-10 p-6 bg-white shadow-md rounded-lg">
+    <h2 class="text-2xl font-semibold mb-6 text-center">Contact Me</h2>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-4">
+      <div>
+        <label for="name" class="block text-gray-700">Name</label>
+        <input
+          formControlName="name"
+          type="text"
+          id="name"
+          name="name"
+          class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-fuchsia-400"
+          required
+        />
+      </div>
+      <div>
+        <label for="email" class="block text-gray-700">Email</label>
+        <input
+          formControlName="email"
+          type="email"
+          id="email"
+          name="email"
+          class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-fuchsia-400"
+          required
+        />
+      </div>
+      <div>
+        <label for="message" class="block text-gray-700">Message</label>
+        <textarea
+          formControlName="message"
+          id="message"
+          name="message"
+          rows="5"
+          class="w-full mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-fuchsia-400"
+          required
+        ></textarea>
+      </div>
+      <button
+        type="submit"
+        class="w-full bg-purple-600 text-white py-2 rounded-md hover:bg-teal-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
+      >
+        Send Message
+      </button>
+      <div id="statusMessage" class="text-center mt-4 text-red-500">
+        {{ statusMessage }}
+      </div>
+    </form>
+  </div>
+</div>

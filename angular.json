@@ -32,7 +32,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": ["node_modules/@lottiefiles/lottie-player/dist/lottie-player.js"]
           },
           "configurations": {
             "production": {
@@ -60,6 +60,9 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
           "configurations": {
             "production": {
               "buildTarget": "portfolio-website:build:production"
@@ -92,7 +95,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": ["node_modules/@lottiefiles/lottie-player/dist/lottie-player.js"]
           }
         }
       }

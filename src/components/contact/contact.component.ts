@@ -1,12 +1,50 @@
 import { Component } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
+import { environment } from '../../../environment.prod';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+  styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent {
+  contactForm: FormGroup;
+  statusMessage: string = '';
 
+  constructor(private fb: FormBuilder, private http: HttpClient) {
+    this.contactForm = this.fb.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      message: ['', Validators.required]
+    });
+  }
+
+  onSubmit() {
+    if (this.contactForm.valid) {
+      const formData = this.contactForm.value;
+
+      this.http.post(`${environment.apiUrl}/contact`, formData)
+        .pipe(
+          catchError((error) => {
+            this.statusMessage = 'Error sending message. Please try again.';
+            console.error('Error sending message', error);
+            return of(null);
+          })
+        )
+        .subscribe((response) => {
+          if (response) {
+            this.statusMessage = 'Message sent successfully!';
+            this.contactForm.reset();
+          }
+        });
+    } else {
+      this.statusMessage = 'Please fill out all fields correctly.';
+    }
+  }
 }

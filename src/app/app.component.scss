@@ -1,0 +1,26 @@
+.app-container {
+  overflow-x: hidden;
+}
+
+.font-century {
+  min-height: 100vh;
+  display: block;
+}
+
+nav {
+  position: relative;
+  flex-shrink: 0;
+}
+
+@keyframes drawLine {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 180px;
+  }
+}
+
+.animate-draw-line {
+  animation: drawLine 1s ease-in-out forwards;
+}
