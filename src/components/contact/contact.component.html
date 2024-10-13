@@ -1,11 +1,10 @@
-<div class="text-center py-10 px-5">
+<div class="bg-purple-700 text-center py-10 px-5">
   <h2 class="font-century text-white text-4xl mb-8">Get in touch</h2>
 
-  <div class="max-w-lg mx-auto mt-10 p-6 bg-white shadow-md rounded-lg">
-    <h2 class="text-2xl font-semibold mb-6 text-center">Contact Me</h2>
+  <div class="max-w-lg mx-auto mt-10">
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-4">
       <div>
-        <label for="name" class="block text-gray-700">Name</label>
+        <label for="name" class="block text-white">Name</label>
         <input
           formControlName="name"
           type="text"
@@ -16,7 +15,7 @@
         />
       </div>
       <div>
-        <label for="email" class="block text-gray-700">Email</label>
+        <label for="email" class="block text-white">Email</label>
         <input
           formControlName="email"
           type="email"
@@ -27,7 +26,7 @@
         />
       </div>
       <div>
-        <label for="message" class="block text-gray-700">Message</label>
+        <label for="message" class="block text-white">Message</label>
         <textarea
           formControlName="message"
           id="message"
@@ -39,7 +38,7 @@
       </div>
       <button
         type="submit"
-        class="w-full bg-purple-600 text-white py-2 rounded-md hover:bg-teal-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
+        class="w-full bg-teal-400 text-purple-900 hover:bg-green-600 hover:text-white py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
       >
         Send Message
       </button>

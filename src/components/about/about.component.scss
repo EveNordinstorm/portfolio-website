@@ -1,0 +1,10 @@
+.profile-photo {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    clip-path: path('M 0 400 L 0 150 A 10 10 0 0 1 300 150 L 300 400 Z');
+    margin: 0 auto;
+    display: block;
+  }
+  
+  
