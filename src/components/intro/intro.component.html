@@ -2,13 +2,17 @@
   class="text-white flex flex-col items-center lg:flex-row lg:justify-between mx-5 lg:mx-24 pb-5 mt-8"
 >
   <div class="text-center lg:text-left lg:mr-8 lg:max-w-md">
-    <h1 class="font-century text-5xl lg:text-7xl">Eve Nordinstorm</h1>
+    <h1 class="font-century text-5xl lg:text-7xl" [@slideInLeft]>
+      Eve Nordinstorm
+    </h1>
 
-    <h2 class="font-commons text-3xl font-bold mt-5">Web Developer</h2>
-    <p class="font-commons mt-3 lg:mt-5 text-lg lg:text-xl">
-      Specialising in frontend design, I also leverage my backend development
-      skills to build websites that are not only beautiful but highly
-      functional.
+    <h2 class="font-commons text-3xl font-bold mt-5" [@slideInLeft]>
+      Web Developer
+    </h2>
+    <p class="font-commons mt-3 lg:mt-5 text-lg lg:text-xl" [@fadeInScale]>
+      As a specialist in frontend design, I combine my backend development
+      expertise to deliver websites that are as functional as they are
+      beautiful.
     </p>
   </div>
 
