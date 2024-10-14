@@ -37,10 +37,12 @@ export class ContactComponent {
             return of(null);
           })
         )
-        .subscribe((response) => {
-          if (response) {
+        .subscribe((response: any) => {
+          if (response?.message === 'Message sent successfully and saved to database') {
             this.statusMessage = 'Message sent successfully!';
             this.contactForm.reset();
+          } else {
+            this.statusMessage = 'Something went wrong. Please try again.';
           }
         });
     } else {
